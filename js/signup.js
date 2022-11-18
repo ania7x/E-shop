@@ -16,12 +16,16 @@ function RegisterNewUser(name, surname, username, password, email, role) {
     };
     $.ajax({
         type: "POST",
-        url: "register_user.php",
+        url: "../php/register_user.php",
         data: Data,
         dataType: "json",
         encode: true,
-    }).done(function (data) {
-        console.log(data);
-    });
+        success: function(data) {
+            console.log("new user created")
+         }
+    })
+    //.done(function (data) {
+   //     console.log(data);
+    //});
 
 };
