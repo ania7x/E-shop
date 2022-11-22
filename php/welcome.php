@@ -1,9 +1,5 @@
 <?php
 session_start();
-$_SESSION['id']="fewijfeo";
-$_SESSION['username']="ania";
-$_SESSION['surname']="gewfwe";
-$_SESSION['role']="fdf";
 if (empty($_SESSION['id'])):
   header('Location:index.html');
 endif;
