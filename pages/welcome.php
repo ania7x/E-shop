@@ -22,17 +22,17 @@ endif;
       <li>
         <a href="#">Menu</a>
         <ul class="dropdown">
-          <li><a href="../pages/welcome.html">Welcome</a></li>
+          <li><a href="./welcome.html">Welcome</a></li>
           <li><a href="../index.html">Login</a></li>
-          <li><a href="../pages/signup.html">Sign up</a></li>
+          <li><a href="./signup.html">Sign up</a></li>
           <li><a href="#">Products</a></li>
           <li><a href="#">Cart</a></li>
           <li><a href="#">Seller</a></li>
-          <li><a href="#">Administration</a></li>
+          <li><a href="./administration.php">Administration</a></li>
         </ul>
       </li>
     </ul>
-    <a href="logout.php">
+    <a href="../php/logout.php">
       <div style="float:right"><button>Logout</button>
       </div>
     </a>
