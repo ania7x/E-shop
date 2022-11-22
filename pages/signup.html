@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/signupstyle.css">
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="../js/signup.js"></script>
+  <title>E-shopper</title>
+</head>
+
+<body>
+    <article>
+      <form class="pure-steps">
+        <input type="radio" name="steps" class="pure-steps_radio" id="step-0" checked="">
+        <input type="radio" name="steps" class="pure-steps_radio" id="step-1">
+        <input type="radio" name="steps" class="pure-steps_radio" id="step-2">
+        <div class="pure-steps_group">
+          <ol>
+            <li class="pure-steps_group-step">
+              <fieldset>
+                <legend class="pure-steps_group-step_legend">Sign Up</legend>
+                <p class="pure-steps_group-step_item flexy-item flexy-column reverse">
+                  <input type="text" placeholder="Type your name here" value="" id="input_name">
+                  <label for="input_name">Name</label>
+                </p>
+                <p class="pure-steps_group-step_item flexy-item flexy-column reverse">
+                  <input type="text" placeholder="Type your surname here" value="" id="input_surname">
+                  <label for="input_surname">Surname</label>
+                </p>
+                <p class="pure-steps_group-step_item flexy-item flexy-column reverse">
+                  <input type="text" placeholder="Type your username here" value="" id="input_username">
+                  <label for="input_username">Username</label>
+                </p>
+                <p class="pure-steps_group-step_item flexy-item flexy-column reverse">
+                  <input type="password" placeholder="Type your password here" value="" id="input_password">
+                  <label for="input_password">Password</label>
+                </p>
+                <p class="pure-steps_group-step_item flexy-item flexy-column reverse">
+                  <input type="text" placeholder="Type your email here" value="" id="input_email">
+                  <label for="input_email">Email</label>
+                </p>
+                <p class="pure-steps_group-step_item flexy-item flexy-column reverse">
+                  <label for="role">Select your role</label>
+                  <select id="role" name="role">
+                    <option value="ADMIN">Admin</option>
+                    <option value="PRODUCTSELLER">ProductSeller</option>
+                    <option value="USER">User</option>
+                  </select>
+                </p>
+                <p class="pure-steps_group-step_item flexy-item flexy-column ">
+                    <input type="button" id="sub" value="Submit"/>  <!--javascript to go to login page-->
+                  
+                </p>
+              </fieldset>
+            </li>
+            <!-- <li class="pure-steps_group-step flexy-item">
+            <div class="pure-steps_preload">
+              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+                <path d="M31.8,3.6c-0.2-0.5-0.4-0.9-0.9-1.2C30.4,2,29.7,1.8,29,1.9c-0.6,0.1-1.2,0.4-1.6,1l-8.5,11.2l0,0l-7.2,9.5l-7.1-9.4 c-0.5-0.7-1.3-1-2.1-1c-0.5,0-1,0.2-1.4,0.5c-0.5,0.4-0.9,1-1,1.7s0.1,1.2,0.5,1.8l9.1,12.1l0,0c0.1,0.2,0.3,0.3,0.4,0.4 c0.4,0.3,0.9,0.5,1.4,0.5c0.8,0,1.6-0.3,2.1-1L22.1,18l0,0l9.1-12.1C32,5.2,32.1,4.4,31.8,3.6z"></path>
+              </svg>
+            </div>
+          </li> -->
+          </ol>
+          <!--
+           <ol class="pure-steps_group-triggers">
+          <li class="pure-steps_group-triggers_item">
+            <label for="step-0">Cancel</label>
+          </li>
+          <li class="pure-steps_group-triggers_item">
+            <label for="step-1">Sign Up</label>
+          </li>
+          <li class="pure-steps_group-triggers_item">
+            <label for="step-2">Jump in</label>
+          </li>-->
+        </ol> 
+        </div>
+        <br>
+          <a id="cancel" href="https://www.google.com">Cancel</a>
+      </form>
+    </article>
+  </section>
+</body>
