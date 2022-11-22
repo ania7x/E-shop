@@ -33,9 +33,9 @@
     <li>
       <a href="#">Menu</a>
       <ul class="dropdown">
-        <li><a href="./welcome.html">Welcome</a></li>
+        <li><a href="./welcome.php">Welcome</a></li>
         <li><a href="../index.html">Login</a></li>
-        <li><a href="../pages/signup.html">Sign up</a></li>
+        <li><a href="./signup.html">Sign up</a></li>
         <li><a href="#">Products</a></li>
         <li><a href="#">Cart</a></li>
         <li><a href="#">Seller</a></li>
@@ -43,8 +43,6 @@
       </ul>
     </li>
   </ul>
-  <section class='logout' id='logout'>
-  </section>
   <div class='form'>
     <form>
       <a href="../index.html" class="btn-logout" id="do-logout"> Logout</a>
