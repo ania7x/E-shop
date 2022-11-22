@@ -18,7 +18,9 @@ function LoginUser(username, password) {
         encode: true,
         success: function (data) {
             console.log("Success...")
-            console.log(data)
+            if (data['message']=='User exists'){
+                window.location.href='pages/welcome.php'
+            }
         },
         error: (response
             //,exception 

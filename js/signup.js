@@ -21,7 +21,7 @@ function RegisterNewUser(name, surname, username, password, email, role) {
         dataType: "json",
         encode: true,
         success: function(data) {
-            console.log("new user created")
+            window.location.href="../index.html"
          }
     })
     //.done(function (data) {

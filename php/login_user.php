@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     $_SESSION['email']=$email;
     $_SESSION['confirmed']=$confirmed;
     //print_r($_SESSION);
-    //echo "<script type='text/javascript'>document.location='home.php'</script>";
+    
     echo "{\"message\":\"User exists\"}";
   } else {
     echo "<script type='text/javascript'>alert('Invalid Username or Password!');
