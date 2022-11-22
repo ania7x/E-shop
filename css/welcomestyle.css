@@ -34,3 +34,8 @@ ul li:hover ul.dropdown {
     display: block;
     /* Display the dropdown */
 }
+ .maincontent{
+   position:absolute;
+   top:0;
+   right:0;
+  }
