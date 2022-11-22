@@ -29,8 +29,15 @@ const buildUsersTable = (data) => {
     })
 
     $('.confirm').click((event) => {
-        $(event.target).attr('id')
+        confirmedId = $(event.target).attr('id')
+        $(event.target).prop('disabled', true)
+        updateConfirmed(confirmedId);
     })
+}
+
+const updateConfirmed = (id) => {
+    alert(id)
+    //ajax to update db and fetch new data and rerender datatables
 }
 
 const fetchSampleData = (errordata = null) => {

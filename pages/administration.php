@@ -1,4 +1,6 @@
 <?php
+  session_start();
+  $_SESSION['id'] = 'sfsf';
   if(!isset($_SESSION['id'])){
     header('Location:../index.html');
   }
