@@ -10,7 +10,7 @@ session_start();
          <div style="width:150px;margin:auto;height:500px;margin-top:300px">
      
          <?php
-          $con=mysqli_connect("localhost:3306","root","2822023097","cloud");
+          $con=mysqli_connect("localhost:3306","admin","admin","cloud");
           if (mysqli_connect_errno())
          {
                 echo "Failed to connect to MySQL: " . mysqli_connect_error();

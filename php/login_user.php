@@ -2,7 +2,7 @@
 session_start();
 $data = [];
 
-$mysqli = mysqli_connect("localhost:3306", "root", "2822023097", "cloud");
+$mysqli = mysqli_connect("localhost:3306", "admin", "admin", "cloud");
 if (mysqli_connect_errno()) {
   die("Failed to connect with MySQL: " . mysqli_connect_error());
 }
