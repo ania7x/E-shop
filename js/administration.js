@@ -1,11 +1,8 @@
 $(document).ready(() => {
-    // fetchSampleData()
-    //     .then(buildUsersTable)
 
-    fetchData("GET", "../php/admin.php", { get_users: true })
-
+    ajaxCall("GET", "../php/admin.php", { get_users: true }, "Couldn't load users")
         .then(buildUsersTable)
-    // .catch(alertError)
+        .catch(alertError)
 
 })
 
@@ -15,20 +12,18 @@ const buildUsersTable = (fetcheddata) => {
     var table = $("#usersTable").DataTable({
         data: data,
         columns: [
-            { data: 'ID'},
+            { data: 'ID' },
             { data: 'NAME' },
             { data: 'SURNAME' },
-            { data: 'EMAIL'},
+            { data: 'EMAIL' },
             { data: 'ROLE' },
             {
                 data: 'CONFIRMED',
                 render: (data, type, row, meta) => {
-                    // console.log(data)
                     var disabled = "";
-                    if (data == "1") {
-                        disabled = "disabled"
+                    if (data == "1") { // Check if user is confirmed
+                        disabled = "disabled" // set button as disabled
                     }
-                    // id = row.data()['id'];
                     return "<button id=\"" + row['ID'] + "\"class=\"confirm\" " + disabled + ">Confirm</button>"
 
                 }
@@ -44,8 +39,11 @@ const buildUsersTable = (fetcheddata) => {
 }
 
 const updateConfirmed = (id) => {
-    alert(id)
     //ajax to update db and fetch new data and rerender datatables
+    ajaxCall("POST", "../php/confirmUser.php", {id: id}, "Couldn't confirm user")
+    .then((response) => alert(response))
+    .catch(alertError)
+
 }
 
 const fetchSampleData = (errordata = null) => {
@@ -55,14 +53,14 @@ const fetchSampleData = (errordata = null) => {
     })
 }
 
-const fetchData = (requestType, requestURL, requestData) => {
+const ajaxCall = (requestType, requestURL, requestData, errorMessage) => {
     return new Promise((respond, reject) => {
         $.ajax({
             type: requestType,
             url: requestURL,
             data: requestData,
             success: (response) => respond(response),
-            error: (response) => reject("Couldn't load users", response)
+            error: (response) => reject(errorMessage, response)
         })
     })
 }
