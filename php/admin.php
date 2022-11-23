@@ -1,18 +1,17 @@
 <?php
 
-    // $mysqli = mysqli_connect("localhost","root","2822023097","cloud");
+    $mysqli = mysqli_connect("localhost","admin","admin","cloud");
 
-    // if(mysqli_connect_errno()){
-    //     die(mysqli_connect_error());
-    // }
+    if(mysqli_connect_errno()){
+        die(mysqli_connect_error());
+    }
 
     if($_SERVER["REQUEST_METHOD"] == "GET"){
-        print_r(json_encode($_GET));
-        
-        // if(isset($_GET["get_users"])){
-        //     echo "{\"message\":\"Alles gut\"}";
-        // }
-        // echo "{\"message\":".$_GET["get_users"]."}";
+        $res = mysqli_query($mysqli, "SELECT * FROM cloud.users;");
+        while($obj = mysqli_fetch_array($res)){
+            $res_array[] = $obj;
+        }
+        echo json_encode($res_array);
     }else{
         echo "{\"message\":\"Problem\"}";
     }

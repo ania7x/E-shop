@@ -1,30 +1,38 @@
 $(document).ready(() => {
-    fetchSampleData()
+    // fetchSampleData()
+    //     .then(buildUsersTable)
+
+    fetchData("GET", "../php/admin.php", { get_users: true })
+
         .then(buildUsersTable)
+    // .catch(alertError)
 
 })
 
-const buildUsersTable = (data) => {
+const buildUsersTable = (fetcheddata) => {
+    data = JSON.parse(fetcheddata)
+    console.log(data)
     var table = $("#usersTable").DataTable({
         data: data,
         columns: [
-            {data: 'id'},
-            {data: 'name'},
-            {data: 'surname'},
-            {data: 'email'},
-            {data: 'role'},
-            {data: 'confirmed',
-             render: (data, type, row, meta)=>{
-                console.log(row['id'])
-                var disabled = "";
-                if(data){
-                    disabled = "disabled"
-                }
-                // id = row.data()['id'];
-                return "<button id=\""+row['id']+"\"class=\"confirm\" "+disabled+">Confirm</button>"
+            { data: 'ID'},
+            { data: 'NAME' },
+            { data: 'SURNAME' },
+            { data: 'EMAIL'},
+            { data: 'ROLE' },
+            {
+                data: 'CONFIRMED',
+                render: (data, type, row, meta) => {
+                    // console.log(data)
+                    var disabled = "";
+                    if (data == "1") {
+                        disabled = "disabled"
+                    }
+                    // id = row.data()['id'];
+                    return "<button id=\"" + row['ID'] + "\"class=\"confirm\" " + disabled + ">Confirm</button>"
 
-             }
-        },
+                }
+            },
         ]
     })
 
@@ -61,7 +69,7 @@ const fetchData = (requestType, requestURL, requestData) => {
 
 const buildUsersList = (data) => {
     // var data = JSON.parse(data)
-    console.log(data)
+    console.log(JSON.parse(data))
 
 }
 
