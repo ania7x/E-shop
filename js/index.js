@@ -24,6 +24,11 @@ function LoginUser(username, password) {
                 $('#errormsg').html(data['errormsg'])
                 $('#username').val("")
                 $('#password').val("")
+            }else if(data['errorm']=='User Not Yet Confirmed'){
+                $('#errormsg').html(data['errorm'])
+                $('#username').val("")
+                $('#password').val("")
+
             }
         },
         error: (response
