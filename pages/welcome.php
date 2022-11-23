@@ -25,10 +25,12 @@ endif;
           <li><a href="./welcome.php">Welcome</a></li>
           <li><a href="../index.html">Login</a></li>
           <li><a href="./signup.html">Sign up</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">Cart</a></li>
-          <li><a href="#">Seller</a></li>
-          <li><a href="./administration.php">Administration</a></li>
+
+
+          <li><a href="<?php if($_SESSION['role']!="USER"){echo "./notallowed.html";}else{echo "./products.php";}?>">Products</a></li>
+          <li><a href="<?php if($_SESSION['role']!="USER"){echo "./notallowed.html";}else{echo "./cart.php";}?>">Cart</a></li>
+          <li><a href="<?php if($_SESSION['role']!="PRODUCTSELLER"){echo "./notallowed.html";}else{echo "./seller.php";}?>">Seller</a></li>
+          <li><a href="<?php if($_SESSION['role']!="ADMIN"){echo "./notallowed.html";}else{echo "./administration.php";}?>">Administration</a></li>
         </ul>
       </li>
     </ul>

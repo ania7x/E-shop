@@ -20,6 +20,10 @@ function LoginUser(username, password) {
             console.log("Success...")
             if (data['message']=='User exists'){
                 window.location.href='pages/welcome.php'
+            }else if(data['errormsg']=='Invalid Username or Password'){
+                $('#errormsg').html(data['errormsg'])
+                $('#username').val("")
+                $('#password').val("")
             }
         },
         error: (response

@@ -66,8 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     
     echo "{\"message\":\"User exists\"}";
   } else {
-    echo "<script type='text/javascript'>alert('Invalid Username or Password!');
-    document.location='login_user.php'</script>";
+    echo "{\"errormsg\":\"Invalid Username or Password\"}";
   }
 
   // Close statement
