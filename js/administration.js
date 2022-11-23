@@ -8,7 +8,6 @@ $(document).ready(() => {
 
 const buildUsersTable = (fetcheddata) => {
     data = JSON.parse(fetcheddata)
-    console.log(data)
     var table = $("#usersTable").DataTable({
         data: data,
         columns: [
@@ -28,21 +27,35 @@ const buildUsersTable = (fetcheddata) => {
 
                 }
             },
+            {
+                render: (data, type, row, meta) => {
+                    return "<button id=\"" + row['ID'] + "\"class=\"delete\" >Delete</button>"
+                }
+            }
         ]
     })
 
     $('.confirm').click((event) => {
         confirmedId = $(event.target).attr('id')
-        $(event.target).prop('disabled', true)
-        updateConfirmed(confirmedId);
+        if (updateConfirmed(confirmedId)) {
+            $(event.target).prop('disabled', true)
+        }
     })
+
+    
 }
 
 const updateConfirmed = (id) => {
     //ajax to update db and fetch new data and rerender datatables
-    ajaxCall("POST", "../php/confirmUser.php", {id: id}, "Couldn't confirm user")
-    .then((response) => alert(response))
-    .catch(alertError)
+    return ajaxCall("POST", "../php/confirmUser.php", { id: id }, "Couldn't confirm user")
+        .then((response) => {
+            var message = JSON.parse(response);
+            return true ? message['message'] === 'success': false
+        })
+        .catch(alertError)
+
+    // console.log(response)
+    // return true ? response["message"] == "User Confirmed" : false
 
 }
 

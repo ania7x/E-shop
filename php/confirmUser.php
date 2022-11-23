@@ -10,7 +10,7 @@
             $query = "UPDATE users SET CONFIRMED = 1 WHERE ID = ".$id.";";
             $res = mysqli_query($mysqli, $query);
             if($res){
-                $data["message"] = "User Confirmed";
+                $data["message"] = "success";
                 echo json_encode($data);
                 exit();
             }

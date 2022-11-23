@@ -57,11 +57,13 @@
           <td>Surname</td>
           <td>Email</td>
           <td>Role</td>
-          <td>Confirmed</td>
+          <td></td>
+          <td></td>
         </tr>
       </thead>
       <tbody>
         <tr>
+          <td></td>
           <td></td>
           <td></td>
           <td></td>
