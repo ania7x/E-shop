@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (empty($_SESSION['id'])):
-  header('Location:index.html');
+  header('Location:../index.html');
 endif;
 ?>
 <!DOCTYPE html>
@@ -22,7 +22,7 @@ endif;
       <li>
         <a href="#">Menu</a>
         <ul class="dropdown">
-          <li><a href="./welcome.html">Welcome</a></li>
+          <li><a href="./welcome.php">Welcome</a></li>
           <li><a href="../index.html">Login</a></li>
           <li><a href="./signup.html">Sign up</a></li>
           <li><a href="#">Products</a></li>

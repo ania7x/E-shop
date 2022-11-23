@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/styles.css" rel="stylesheet" />
-    <title>E-shopper</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="js/index.js"></script>
+  <title>E-shopper</title>
 </head>
+
 <body>
-<section class='login' id='login'>
+  <section class='login' id='login'>
     <div class='head'>
-    <h1 class='company'>E-shopper</h1>
+      <h1 class='company'>E-shopper</h1>
     </div>
     <p class='msg'>Login</p>
     <div class='form'>
-    <form >
+      <form>
         <input type="text" placeholder='Username' class='text' id='username' required><br>
-        <input type="password" placeholder='••••••••••••••' class='password'><br>
-        <a href="#" class='btn-login' id='do-login'>Login</a>
-        <!--  <a href="C:\Users\USER\OneDrive\Υπολογιστής\CODED\cloudExercise2022/signup.html"> Register</a>
-        <div id="C:\Users\USER\OneDrive\Υπολογιστής\CODED\cloudExercise2022/signup.html" name="C:\Users\USER\OneDrive\Υπολογιστής\CODED\cloudExercise2022/signup.html"></div> 
-        -->
-        <a href="./signup.html" class='register'>Register?</a>
-    </form>
-</div> 
-</section>
+        <input type="password" placeholder='••••••••••••••' class='password' id='password'><br>
+        <input type="button" class="btn-login" id="do-login" value="Login" />
+        <a href="pages/signup.html" class='register'>Register?</a>
+      </form>
+    </div>
+  </section>
+
 </body>
+
 </html>
