@@ -3,6 +3,10 @@ session_start();
 if (empty($_SESSION['id'])):
   header('Location:../index.html');
 endif;
+
+if(!$_SESSION['role']=="USER"){
+  header('Location:./notallowed.html');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
