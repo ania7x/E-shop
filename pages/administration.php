@@ -3,7 +3,13 @@
   if(!isset($_SESSION['id'])){
     header('Location:../index.html');
   }
+
+if(strcmp($_SESSION['role'],"ADMIN")){
+  header('Location:./notallowed.html');
+}
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
