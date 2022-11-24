@@ -4,7 +4,7 @@ if (empty($_SESSION['id'])):
   header('Location:../index.html');
 endif;
 
-if(!$_SESSION['role']=="USER"){
+if(strcmp($_SESSION['role'],"USER")){
   header('Location:./notallowed.html');
 }
 ?>
