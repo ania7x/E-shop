@@ -1,6 +1,6 @@
 $(document).ready(()=>{
-    ajaxCall("GET","../php/cart.php",{},"Products not found")
-    .then((response)=>console.log(response))
+    ajaxCall("GET","../php/cart.php",{},"Cart not found")
+    .then(CartList)
     .catch((msg) => alert(msg))
 })
 
@@ -16,23 +16,21 @@ const ajaxCall = (requestType, requestURL, requestData, errorMessage) => {
     })
 }
 
-const buildProductsTable = (fetcheddata) => {
+const CartList = (fetcheddata) => {
     data = JSON.parse(fetcheddata)
-    var table = $("#products").DataTable({
-        data: data,
-        columns: [
-            { data: 'pName' },
-            { data: 'PRICE' },
-            { data: 'CATEGORY' },
-            { data: 'sellerName' },
-            { data: 'DATEOFWITHDRAWAL' },
-            {
-                render: (data, type, row, meta) => {
-                    return "<button id=\"" + row['pId'] + "\"class=\"purchase\" >Purchase</button>"
-                }
-            }
-        ]
+    var list=document.createElement("ul")
+    $(list).addClass("cart-product-list")
+    data.forEach((product)=>{
+        var item=renderitem(product);
+        $(list).append(item)
     })
+    $(".cart-list").append(list)
+    
 
     
+}
+
+function renderitem(productobject){
+    
+
 }
