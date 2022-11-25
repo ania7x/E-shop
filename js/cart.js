@@ -25,12 +25,34 @@ const CartList = (fetcheddata) => {
         $(list).append(item)
     })
     $(".cart-list").append(list)
-    
-
-    
 }
 
 function renderitem(productobject){
-    
+    console.log(productobject)
+    var item=document.createElement("li")
+    $(item).addClass("cart-product-list-item")
+    var name=document.createElement("span")
+    $(name).addClass("cart-product-list-name")
+    $(name).html(productobject["name"])
+    $(item).append(name)
+    var price=document.createElement("span")
+    $(price).addClass("cart-product-list-price")
+    $(price).html(productobject["price"])
+    $(item).append(price)
+    var dateofinsertion=document.createElement("span")
+    $(dateofinsertion).addClass("cart-product-list-dateofinsertion")
+    $(dateofinsertion).html(productobject["dateofinsertion"])
+    $(item).append(dateofinsertion)
+    var deletebutton=document.createElement("button")
+    $(deletebutton).addClass("cart-product-list-deletebutton")
+    $(deletebutton).addClass("delete")
+    $(deletebutton).attr('id', productobject['productid'])
+    $(deletebutton).attr('type','button')
+    $(deletebutton).attr('value','X')
+    $(item).append(deletebutton)
+
+    return item;
+
+
 
 }
