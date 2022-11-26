@@ -2,6 +2,7 @@ $(document).ready(()=>{
     ajaxCall("GET","../php/cart.php",{},"Cart not found")
     .then(CartList)
     .catch((msg) => alert(msg))
+   
 })
 
 const ajaxCall = (requestType, requestURL, requestData, errorMessage) => {
@@ -25,10 +26,22 @@ const CartList = (fetcheddata) => {
         $(list).append(item)
     })
     $(".cart-list").append(list)
+    $(".delete").click(deleteitem)
+}
+
+function deleteitem(event){
+    var productid=$(event.target).attr('id');
+    var parent=$(event.target).parent();
+    //hide element from list 
+    //delete product from database
+    ajaxCall("POST", "../php/cart.php", {productid:productid}, "Could not delete from database")
+    .then(()=>$(parent).remove())
+    .catch((msg) => alert(msg))
+
+
 }
 
 function renderitem(productobject){
-    console.log(productobject)
     var item=document.createElement("li")
     $(item).addClass("cart-product-list-item")
     var name=document.createElement("span")
@@ -50,9 +63,5 @@ function renderitem(productobject){
     $(deletebutton).attr('type','button')
     $(deletebutton).attr('value','X')
     $(item).append(deletebutton)
-
     return item;
-
-
-
 }

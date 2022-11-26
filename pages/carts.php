@@ -48,6 +48,9 @@ if(strcmp($_SESSION['role'],"USER")){
   <div class="page">
     <div class="cart">
         <div class="cart-list">
+        <div class="title">
+          Shopping Bag
+         </div>
         </div><div class="cart-sum"></div>
     </div>
   </div>
