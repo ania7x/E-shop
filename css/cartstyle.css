@@ -117,6 +117,15 @@ body {
     right: 270px;
 
   }
+  .sum-number{
+
+    color: #0b0b0b;
+    border: 2px solid black;
+    padding: 20px 30px;
+    height: 60x;
+    display: flex;
+
+  }
   .cart-product-list-price:before {
     content: ' \003A';
   }

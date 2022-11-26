@@ -20,11 +20,19 @@ const ajaxCall = (requestType, requestURL, requestData, errorMessage) => {
 const CartList = (fetcheddata) => {
     data = JSON.parse(fetcheddata)
     var list=document.createElement("ul")
+    var sum=document.createElement("span")
+    $(sum).addClass("sum-number")
     $(list).addClass("cart-product-list")
+    var total=0;
     data.forEach((product)=>{
-        var item=renderitem(product);
+        let values = renderitem(product);
+        var item = values.item;
+        var floatpriceofcart = values.floatprice;
+        total += floatpriceofcart;
         $(list).append(item)
     })
+    $(sum).html(total)
+    $(".cart-sum").append(sum)
     $(".cart-list").append(list)
     $(".delete").click(deleteitem)
 }
@@ -51,6 +59,7 @@ function renderitem(productobject){
     var price=document.createElement("span")
     $(price).addClass("cart-product-list-price")
     $(price).html(productobject["price"])
+    var floatprice = parseFloat($(price).text()) || 0;
     $(item).append(price)
     var dateofinsertion=document.createElement("span")
     $(dateofinsertion).addClass("cart-product-list-dateofinsertion")
@@ -63,5 +72,5 @@ function renderitem(productobject){
     $(deletebutton).attr('type','button')
     $(deletebutton).attr('value','X')
     $(item).append(deletebutton)
-    return item;
+    return { item, floatprice };
 }
