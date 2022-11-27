@@ -1,8 +1,19 @@
 $(document).ready(()=>{
+    $("#add-product-button").click(toggleAddProductSection)
     ajaxCall("GET","../php/product.php",{},"Products not found")
     .then(buildProductsTable)
     .catch((msg) => alert(msg))
 })
+
+const implementListButtonListeners = () => {
+    //implement edit and delete listeners
+}
+
+
+const toggleAddProductSection = () => {
+    $("#add-product-form").toggle()
+}
+
 
 const ajaxCall = (requestType, requestURL, requestData, errorMessage) => {
     return new Promise((respond, reject) => {
