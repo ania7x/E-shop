@@ -42,6 +42,12 @@ function deleteitem(event){
     var parent=$(event.target).parent();
     //hide element from list 
     //delete product from database
+    var currentprice=$(parent).find('.cart-product-list-price')
+    var fpriceofnode = parseFloat($(currentprice).text()) || 0;
+    var total=$(".cart-sum").find('.sum-number').html()
+    //var total = parseFloat($(sum).text()) || 0;
+    total=total-fpriceofnode;
+    $(".sum-number").html(total)
     ajaxCall("POST", "../php/cart.php", {productid:productid}, "Could not delete from database")
     .then(()=>$(parent).remove())
     .catch((msg) => alert(msg))
