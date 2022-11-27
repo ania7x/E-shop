@@ -1,0 +1,141 @@
+
+ul {
+    padding: 0;
+    list-style: none;
+    background: #f2f2f2;
+    width: 500px;
+}
+
+ul li {
+    display: block;
+    position: relative;
+    line-height: 21px;
+    text-align: left;
+}
+
+ul li a {
+    display: block;
+    padding: 8px 25px;
+    color: #333;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    color: #fff;
+    background: #939393;
+}
+
+ul li ul.dropdown {
+    min-width: 100%;
+    /* Set width of the dropdown */
+    background: #f2f2f2;
+    display: none;
+    position: absolute;
+    z-index: 999;
+    left: 0;
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+    /* Display the dropdown */
+}
+
+
+body {
+	background: #ABCDEF;
+}
+.cart {
+    text-align: center;
+    width: 100%;
+    height: 423px;
+    margin: 80px auto;
+    background: #ABCDEF;
+    box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+    border-radius: 6px;
+   
+    display: flex;
+    flex-direction: column;
+  }
+  .title {
+    height: 60px;
+    border-bottom: 1px solid #E1E8EE;
+    padding: 20px 30px;
+    color: #0b0b0b;
+    font-size: 30px;
+    font-weight: 400;
+  }
+  ul.cart-product-list{
+    margin-left: auto;
+    margin-right: auto;
+    width: 25em
+    
+  }
+  .cart-product-list-item {
+    color: #0b0b0b;
+    border: 2px solid black;
+    padding: 20px 30px;
+    height: 60x;
+    display: flex;
+  }
+  .cart-product-list-item:nth-child(3) {
+    border-top:  1px solid #E1E8EE;
+    border-bottom:  1px solid #E1E8EE;
+  }
+  .delete{
+    Cursor: pointer;
+    width: 50px;
+    border: 3px solid black;
+    position: absolute;
+    padding: 8px 3px;
+    top: 17px;
+    right: 0px;
+    background-color:#060606;
+    background: url(&amp;quot;delete-icn.svg&amp;quot;) no-repeat center;
+
+  }
+  .cart-product-list-deletebutton:after{
+    display: inline-block;
+   
+    content: "\00d7"; /* This will render the 'X' */
+    
+  }
+  .cart-product-list-name{
+    padding: 3px 1px;
+    top: 10px;
+    right: 0px;
+    background-color:#fcfcfe;
+  }
+ 
+  
+  .cart-product-list-price{
+
+    width: 18px;
+    background-color:#fcfcfe;
+    position: absolute;
+    padding:  3px 1px;
+    top: 20px;
+    right: 270px;
+
+  }
+  .sum-number{
+
+    color: #0b0b0b;
+    border: 2px solid black;
+    padding: 20px 30px;
+    height: 60x;
+    display: flex;
+
+  }
+  .cart-product-list-price:before {
+    content: ' \003A';
+  }
+
+  .cart-product-list-dateofinsertion{
+
+    width: 100px;
+    background-color:#fcfcfe;
+    position: absolute;
+    padding:  3px 1px;
+    top: 10px;
+    right: 100px;
+  }

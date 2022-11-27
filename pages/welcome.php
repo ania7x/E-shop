@@ -28,7 +28,7 @@ endif;
 
 
           <li><a href="<?php if($_SESSION['role']!="USER"){echo "./notallowed.html";}else{echo "./products.php";}?>">Products</a></li>
-          <li><a href="<?php if($_SESSION['role']!="USER"){echo "./notallowed.html";}else{echo "./cart.php";}?>">Cart</a></li>
+          <li><a href="<?php if($_SESSION['role']!="USER"){echo "./notallowed.html";}else{echo "./carts.php";}?>">Cart</a></li>
           <li><a href="<?php if($_SESSION['role']!="PRODUCTSELLER"){echo "./notallowed.html";}else{echo "./seller.php";}?>">Seller</a></li>
           <li><a href="<?php if($_SESSION['role']!="ADMIN"){echo "./notallowed.html";}else{echo "./administration.php";}?>">Administration</a></li>
         </ul>
