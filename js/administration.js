@@ -29,7 +29,7 @@ const buildUsersTable = (fetcheddata) => {
             },
             {
                 render: (data, type, row, meta) => {
-                    return "<button id=\"" + row['ID'] + "\"class=\"delete\" >Delete</button>"
+                    return "<button id=\"" + row['ID'] + "\"class=\"delete\">Delete</button>"
                 }
             }
         ]
@@ -42,7 +42,15 @@ const buildUsersTable = (fetcheddata) => {
         }
     })
 
-    
+    $('.delete').click((event)=>{
+        deleteId = $(event.target).attr('id');
+        ajaxCall("POST","../php/deleteUser.php",{id: deleteId}, "User wasn't deleted")
+        .then((response)=>{
+            table.row($(event.target).parents('tr'))
+            .remove()
+            .draw();
+        })
+    })    
 }
 
 const updateConfirmed = (id) => {
