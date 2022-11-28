@@ -1,17 +1,45 @@
-$(document).ready(()=>{
-    $("#add-product-button").click(toggleAddProductSection)
-    ajaxCall("GET","../php/product.php",{},"Products not found")
-    .then(buildProductsTable)
-    .catch((msg) => alert(msg))
+$(document).ready(() => {
+    initialize()
+    var products = ajaxCall("GET", "../php/product.php", {}, "Products not found")
+        .then(buildProductsTable)
+        .catch((msg) => alert(msg))
 })
 
-const implementListButtonListeners = () => {
+const initialize = () => {
+    $("#add-product-form").hide()
+    $("#add-product-button").click(toggleAddProductSection)
+    $("#product-form-btn").val("Add Product")
+}
+
+const implementListButtonListeners = (data) => {
     //implement edit and delete listeners
+    $("button.edit").click({param:data}, editProduct)
+    $("button.delete").click(deleteProduct)
+}
+
+const editProduct = (event) => {
+    var myId = $(event.target).attr('id');
+    var myData = event.data.param.filter(x => x['pId'] == myId)[0]
+    $("#product-form-btn").val("Edit Product")
+    $("input#product-name").val(myData['pName'])
+    $("input#product-price").val(myData['PRICE'])
+    $("input#product-category").val(myData['CATEGORY'])
+    $("input#product-withdrawal").val(myData['DATEOFWITHDRAWAL'])
+    $("#add-product-form").show()
+}
+
+const deleteProduct = (event) => {
+    console.log($(event.target).attr('id'))
+    //connect to db
 }
 
 
 const toggleAddProductSection = () => {
-    $("#add-product-form").toggle()
+    $("#add-product-form").toggle("fast")
+}
+
+const postProductToDB = (data) => {
+
 }
 
 
@@ -49,5 +77,8 @@ const buildProductsTable = (fetcheddata) => {
         ]
     })
 
-    
+    implementListButtonListeners(data)
+    return data
+
+
 }

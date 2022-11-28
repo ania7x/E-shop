@@ -4,7 +4,7 @@ if (empty($_SESSION['id'])):
   header('Location:../index.html');
 endif;
 
-if(strcmp($_SESSION['role'],"PRODUCTSELLER")){
+if (strcmp($_SESSION['role'], "PRODUCTSELLER")) {
   header('Location:./notallowed.html');
 }
 ?>
@@ -59,11 +59,15 @@ if(strcmp($_SESSION['role'],"PRODUCTSELLER")){
     <div class="add-new-product">
       <button id="add-product-button">+</button>
       <form id="add-product-form">
-        <div class="form-element"><label for="product-name">Product Name</label><input type="text" id="product-name" name="product-name" placeholder="Banana"></div>
-        <div class="form-element"><label for="product-price">Price</label><input type="text" id="product-price" name="product-price" placeholder="0.4"></div>
-        <div class="form-element"><label for="product-category">Category</label><input type="text" id="priduct-category" name="product-category" placeholder="Fruit"></div>
-        <div class="form-element"><label for="product-withdrawal">Withdrawal Date</label><input type="text" id="product-withdrawal" name="product-withdrawal" placeholder="YYYY-MM-DD"></div>
-        <div class="form-element"><input type="button" value="Add Product"></div>
+        <div class="form-element"><label for="product-name">Product Name</label><input type="text" id="product-name"
+            name="product-name" placeholder="Banana"></div>
+        <div class="form-element"><label for="product-price">Price</label><input type="text" id="product-price"
+            name="product-price" placeholder="0.4"></div>
+        <div class="form-element"><label for="product-category">Category</label><input type="text" id="product-category"
+            name="product-category" placeholder="Fruit"></div>
+        <div class="form-element"><label for="product-withdrawal">Withdrawal Date</label><input type="text"
+            id="product-withdrawal" name="product-withdrawal" placeholder="YYYY-MM-DD"></div>
+        <div class="form-element"><input type="button" value="Add Product" id="product-form-btn"></div>
       </form>
     </div>
     <table id="products">
