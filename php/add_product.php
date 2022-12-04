@@ -1,4 +1,5 @@
 <?php
+session_start();
 $mysqli = mysqli_connect("localhost", "admin", "admin", "cloud");
 
 if (mysqli_connect_errno()) {
