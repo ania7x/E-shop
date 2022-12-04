@@ -30,8 +30,10 @@ const editProduct = (event) => {
 }
 
 const deleteProduct = (event) => {
-    console.log($(event.target).attr('id'))
     //connect to db
+    ajaxCall("POST", "../php/delete_product.php", {pId: $(event.target).attr('id') }, "Product wasn't deleted").
+    then(console.log("product deleted"))
+    // πρεπει να εξαφανίζονται από τη λίστα τα προιοντα που διαγράφονται
 }
 
 
@@ -47,9 +49,9 @@ const postProductToDB = (data) => {
         category: $("input#product-category").val(),
         withdrawal_date: $("input#product-withdrawal").val()
     }
-        
 
     ajaxCall("POST",",,/php/add_product.php", requestData, "Product wasn't added")
+    .then(res=>console.log(res))
 
 }
 
@@ -91,6 +93,4 @@ const buildProductsTable = (fetcheddata) => {
 
     implementListButtonListeners(data)
     return data
-
-
 }
