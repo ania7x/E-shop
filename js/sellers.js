@@ -22,6 +22,7 @@ const editProduct = (event) => {
     var myData = event.data.param.filter(x => x['pId'] == myId)[0]
     $("#product-form-btn").val("Edit Product")
     $("input#product-name").val(myData['pName'])
+    $("input#product-code").val(myData['PRODUCTCODE'])
     $("input#product-price").val(myData['PRICE'])
     $("input#product-category").val(myData['CATEGORY'])
     $("input#product-withdrawal").val(myData['DATEOFWITHDRAWAL'])
@@ -71,6 +72,7 @@ const buildProductsTable = (fetcheddata) => {
         data: data,
         columns: [
             { data: 'pName' },
+            { data: 'PRODUCTCODE' },
             { data: 'PRICE' },
             { data: 'CATEGORY' },
             { data: 'DATEOFWITHDRAWAL' },

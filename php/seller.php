@@ -7,7 +7,7 @@ if (mysqli_connect_errno()) {
     die(mysqli_connect_error());
 }
 
-$query = "SELECT p.ID as pId, p.NAME AS pName, PRICE, CATEGORY, DATEOFWITHDRAWAL
+$query = "SELECT p.ID as pId, p.NAME AS pName, PRODUCTCODE, PRICE, CATEGORY, DATEOFWITHDRAWAL
             FROM cloud.products p 
             WHERE p.SELLERID = ".$_SESSION['id'].";";
 

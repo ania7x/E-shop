@@ -61,6 +61,8 @@ if (strcmp($_SESSION['role'], "PRODUCTSELLER")) {
       <form id="add-product-form">
         <div class="form-element"><label for="product-name">Product Name</label><input type="text" id="product-name"
             name="product-name" placeholder="Banana"></div>
+        <div class="form-element"><label for="product-code">Product Code</label><input type="text" id="product-code"
+            name="product-code" placeholder="1234"></div>
         <div class="form-element"><label for="product-price">Price</label><input type="text" id="product-price"
             name="product-price" placeholder="0.4"></div>
         <div class="form-element"><label for="product-category">Category</label><input type="text" id="product-category"
@@ -73,6 +75,7 @@ if (strcmp($_SESSION['role'], "PRODUCTSELLER")) {
     <table id="products">
       <thead>
         <td>Product</td>
+        <td>Product Code</td>
         <td>Price</td>
         <td>Category</td>
         <td>Withdrawal Date</td>
@@ -80,6 +83,7 @@ if (strcmp($_SESSION['role'], "PRODUCTSELLER")) {
         <td></td>
       </thead>
       <tbody>
+        <td></td>
         <td></td>
         <td></td>
         <td></td>
