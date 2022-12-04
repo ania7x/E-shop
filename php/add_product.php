@@ -8,8 +8,8 @@ if (mysqli_connect_errno()) {
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-    $query = "INSERT INTO products VALUES (\"" . $_POST['name'] . "\",\"" . $_POST['code'] . "\",\"" . $_POST['price'] . "\",\"" . $_POST['withdrawaldate'] . "\",\"" . $_SESSION['id'] . "\",\"" . $_POST['category'] . "\);";
-
+    $query = "INSERT INTO products(NAME,PRODUCTCODE,PRICE,DATEOFWITHDRAWAL,SELLERID,CATEGORY) VALUES (\"" . $_POST['name'] . "\"," . $_POST['code'] . "," . $_POST['price'] . ",\"" . $_POST['withdrawaldate'] . "\"," . $_SESSION['id'] . ",\"" . $_POST['category'] . "\");";
+    // echo "{\"query\":".$query."}";
     $res = mysqli_query($mysqli, $query);
 
     if ($res) {

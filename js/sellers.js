@@ -8,7 +8,7 @@ $(document).ready(() => {
 const initialize = () => {
     $("#add-product-form").hide()
     $("#add-product-button").click(toggleAddProductSection)
-    $("#product-form-btn").val("Add Product")
+    $("#product-form-btn").val("Save")
 }
 
 const implementListButtonListeners = (data) => {
@@ -20,7 +20,6 @@ const implementListButtonListeners = (data) => {
 const editProduct = (event) => {
     var myId = $(event.target).attr('id');
     var myData = event.data.param.filter(x => x['pId'] == myId)[0]
-    $("#product-form-btn").val("Edit Product")
     $("input#product-name").val(myData['pName'])
     $("input#product-code").val(myData['PRODUCTCODE'])
     $("input#product-price").val(myData['PRICE'])
@@ -39,18 +38,19 @@ const deleteProduct = (event) => {
 
 const toggleAddProductSection = () => {
     $("#add-product-form").toggle("fast")
+    $("#product-form-btn").click(postProductToDB)
 }
 
-const postProductToDB = (data) => {
+const postProductToDB = () => {
     var requestData = {
         name: $("input#product-name").val(),
         code: $("input#product-code").val(),
         price: $("input#product-price").val(),
         category: $("input#product-category").val(),
-        withdrawal_date: $("input#product-withdrawal").val()
+        withdrawaldate: $("input#product-withdrawal").val()
     }
 
-    ajaxCall("POST",",,/php/add_product.php", requestData, "Product wasn't added")
+    ajaxCall("POST","../php/add_product.php", requestData, "Product wasn't added")
     .then(res=>console.log(res))
 
 }
