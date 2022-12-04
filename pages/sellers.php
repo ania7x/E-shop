@@ -32,11 +32,6 @@ if (strcmp($_SESSION['role'], "PRODUCTSELLER")) {
   <div class='head'>
     <?php include("navbar.php"); ?>
   </div>
-  <div class='maincontent'>
-    <h4 class='company'>Welcome
-      <?php echo $_SESSION['username'] . " " . $_SESSION['surname'] . " (" . $_SESSION['role'] . " )"; ?>
-    </h4>
-  </div>
   <div id="main">
     <div class="add-new-product">
       <button id="add-product-button">+</button>

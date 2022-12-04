@@ -35,11 +35,6 @@ if(strcmp($_SESSION['role'],"ADMIN")){
   <div class='head'>
    <?php include("navbar.php"); ?>
   </div>
-  <div class='form'>
-    <form>
-      <a href="../index.html" class="btn-logout" id="do-logout"> Logout</a>
-    </form>
-  </div>
   <div class="users">
     <table id="usersTable">
       <thead>
