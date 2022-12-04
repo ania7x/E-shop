@@ -1,11 +1,7 @@
 <?php
 session_start();
 $data = [];
-
-$mysqli = mysqli_connect("localhost:3306", "admin", "admin", "cloud");
-if (mysqli_connect_errno()) {
-  die("Failed to connect with MySQL: " . mysqli_connect_error());
-}
+include("dbconnect.php");
 
 if ($_SERVER["REQUEST_METHOD"] == 'POST') {
   $username = $_POST['username'];

@@ -1,16 +1,14 @@
 <?php
-
+session_start();
 include("dbconnect.php");
 
-$query = "SELECT p.ID as pId, p.NAME AS pName, PRICE, CATEGORY, DATEOFWITHDRAWAL, u.NAME as sellerName
+$query = "SELECT p.ID as pId, p.NAME AS pName, PRODUCTCODE, PRICE, CATEGORY, DATEOFWITHDRAWAL
             FROM cloud.products p 
-            INNER JOIN 
-            cloud.users u 
-            WHERE p.SELLERID = u.ID;";
-
-$res = mysqli_query($mysqli, $query);
+            WHERE p.SELLERID = ".$_SESSION['id'].";";
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    $res = mysqli_query($mysqli, $query);
+
     while ($row = mysqli_fetch_array($res)) {
         $products[] = $row;
     }
