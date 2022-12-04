@@ -1,6 +1,6 @@
 $(document).ready(() => {
     initialize()
-    var products = ajaxCall("GET", "../php/product.php", {}, "Products not found")
+    var products = ajaxCall("GET", "../php/seller.php", {}, "Products not found")
         .then(buildProductsTable)
         .catch((msg) => alert(msg))
 })
@@ -39,6 +39,16 @@ const toggleAddProductSection = () => {
 }
 
 const postProductToDB = (data) => {
+    var requestData = {
+        name: $("input#product-name").val(),
+        code: $("input#product-code").val(),
+        price: $("input#product-price").val(),
+        category: $("input#product-category").val(),
+        withdrawal_date: $("input#product-withdrawal").val()
+    }
+        
+
+    ajaxCall("POST",",,/php/add_product.php", requestData, "Product wasn't added")
 
 }
 
