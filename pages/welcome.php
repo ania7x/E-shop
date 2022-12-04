@@ -17,27 +17,7 @@ endif;
 
 <body>
   <div class='head'>
-  <h1>E-shopper</h1>
-    <ul>
-      <li>
-        <a href="#">Menu</a>
-        <ul class="dropdown">
-          <li><a href="./welcome.php">Welcome</a></li>
-          <li><a href="../index.html">Login</a></li>
-          <li><a href="./signup.html">Sign up</a></li>
-
-
-          <li><a href="<?php if($_SESSION['role']!="USER"){echo "./notallowed.html";}else{echo "./products.php";}?>">Products</a></li>
-          <li><a href="<?php if($_SESSION['role']!="USER"){echo "./notallowed.html";}else{echo "./carts.php";}?>">Cart</a></li>
-          <li><a href="<?php if($_SESSION['role']!="PRODUCTSELLER"){echo "./notallowed.html";}else{echo "./seller.php";}?>">Seller</a></li>
-          <li><a href="<?php if($_SESSION['role']!="ADMIN"){echo "./notallowed.html";}else{echo "./administration.php";}?>">Administration</a></li>
-        </ul>
-      </li>
-    </ul>
-    <a href="../php/logout.php">
-      <div style="float:right"><button>Logout</button>
-      </div>
-    </a>
+    <?php include("navbar.php"); ?>
   </div>
   <div class='maincontent'>
   <h4 class='company'>Welcome
