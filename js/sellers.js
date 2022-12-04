@@ -44,15 +44,16 @@ const toggleAddProductSection = () => {
 
 const postProductToDB = () => {
     var requestData = {
-        name: $("input#product-name").val(),
-        code: $("input#product-code").val(),
-        price: $("input#product-price").val(),
-        category: $("input#product-category").val(),
-        withdrawaldate: $("input#product-withdrawal").val()
+        pName: $("input#product-name").val(),
+        PRODUCTCODE: $("input#product-code").val(),
+        PRICE: $("input#product-price").val(),
+        CATEGORY: $("input#product-category").val(),
+        DATEOFWITHDRAWAL: $("input#product-withdrawal").val()
     }
 
+
     ajaxCall("POST","../php/add_product.php", requestData, "Product wasn't added")
-    .then(res=>console.log(res))
+    .then()
 
 }
 
