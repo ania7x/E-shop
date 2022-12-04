@@ -1,10 +1,6 @@
 <?php
 session_start();
-$mysqli = mysqli_connect("localhost", "admin", "admin", "cloud");
-
-if (mysqli_connect_errno()) {
-    die(mysqli_connect_error());
-}
+include("dbconnect.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $query = "select name,price,productid,dateofinsertion from products,(

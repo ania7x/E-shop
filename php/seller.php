@@ -1,11 +1,6 @@
 <?php
 session_start();
-
-$mysqli = mysqli_connect("localhost", "admin", "admin", "cloud");
-
-if (mysqli_connect_errno()) {
-    die(mysqli_connect_error());
-}
+include("dbconnect.php");
 
 $query = "SELECT p.ID as pId, p.NAME AS pName, PRODUCTCODE, PRICE, CATEGORY, DATEOFWITHDRAWAL
             FROM cloud.products p 
