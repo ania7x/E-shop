@@ -53,9 +53,17 @@ const postProductToDB = () => {
 
 
     ajaxCall("POST","../php/add_product.php", requestData, "Product wasn't added")
-    .then()
+    .then((response)=> {
+        var dataWithId = {
+            ...requestData,
+            pId: parseInt(response)
+        }
+        var table = $("#products").DataTable();
+        table.rows.add([dataWithId]).draw();
+    })
 
 }
+
 
 
 const ajaxCall = (requestType, requestURL, requestData, errorMessage) => {
