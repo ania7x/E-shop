@@ -19,6 +19,7 @@ if(strcmp($_SESSION['role'],"USER")){
   <title>E-shopper</title>
 
   <!-- CSS -->
+  <link rel="stylesheet" href="../css/navbarstyle.css">
   <link rel="stylesheet" href="../css/cartstyle.css">
 
   <!-- JS -->
