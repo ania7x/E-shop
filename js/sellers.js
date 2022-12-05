@@ -56,12 +56,14 @@ const postProductToDB = () => {
 
     ajaxCall("POST","../php/add_product.php", requestData, "Product wasn't added")
     .then((response)=> {
+        // console.log(parseInt(response.replace(/['"]+/g, '')))
         var dataWithId = {
             ...requestData,
-            pId: parseInt(response)
+            pId:parseInt(response.replace(/['"]+/g, ''))
         }
         var table = $("#products").DataTable();
         table.rows.add([dataWithId]).draw();
+        implementListButtonListeners([dataWithId]);
     })
 
 }
@@ -104,6 +106,6 @@ const buildProductsTable = (fetcheddata) => {
         ]
     })
 
-    // implementListButtonListeners(data)
+    implementListButtonListeners(data)
     return data
 }
