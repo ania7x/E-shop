@@ -82,6 +82,7 @@ const ajaxCall = (requestType, requestURL, requestData, errorMessage) => {
 
 const buildProductsTable = (fetcheddata) => {
     data = JSON.parse(fetcheddata)
+    if(!data){ data = {} }
     var table = $("#products").DataTable({
         data: data,
         columns: [
@@ -103,6 +104,6 @@ const buildProductsTable = (fetcheddata) => {
         ]
     })
 
-    implementListButtonListeners(data)
+    // implementListButtonListeners(data)
     return data
 }
