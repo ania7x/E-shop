@@ -1,8 +1,8 @@
 <div class='head'>
   <h1 class='company'>E-shopper</h1>
 </div>
-<ul>
-  <li>
+<ul class="navbar">
+  <li class="masterItem">
     <a href="#">Menu</a>
     <ul class="dropdown">
       <li><a href="./welcome.php">Welcome</a></li>
@@ -16,6 +16,5 @@
   </li>
 </ul>
 <a href="../php/logout.php">
-  <div style="float:right"><button>Logout</button>
-  </div>
+  Logout
 </a>
