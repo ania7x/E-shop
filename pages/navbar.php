@@ -15,6 +15,6 @@
     </ul>
   </li>
 </ul>
-<a href="../php/logout.php">
+<a class="logout-btn" href="../php/logout.php">
   Logout
 </a>
