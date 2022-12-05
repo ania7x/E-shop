@@ -20,6 +20,7 @@ if(strcmp($_SESSION['role'],"ADMIN")){
   <title>E-shopper</title>
 
   <!-- CSS -->
+  <link rel="stylesheet" href="../css/navbarstyle.css">
   <link rel="stylesheet" href="../css/adminstyle.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
 
