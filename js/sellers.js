@@ -25,13 +25,16 @@ const editProduct = (event) => {
     $("input#product-price").val(myData['PRICE'])
     $("input#product-category").val(myData['CATEGORY'])
     $("input#product-withdrawal").val(myData['DATEOFWITHDRAWAL'])
+    $("input#product-form-btn").off('click', postProductToDB);
+    $("input#product-form-btn").on('click', { param: myId }, postEditedProduct);
+
     $("#add-product-form").show()
 }
 
 const deleteProduct = (event) => {
     var pId = $(event.target).attr('id')
     //connect to db
-    ajaxCall("POST", "../php/delete_product.php", {pId: pId }, "Product wasn't deleted").
+    ajaxCall("POST", "../php/delete_product.php", { pId: pId }, "Product wasn't deleted").
     then(()=>{
         $("#products").DataTable().row($(event.target).parents('tr')).remove().draw()
     })
@@ -65,6 +68,26 @@ const postProductToDB = () => {
         table.rows.add([dataWithId]).draw();
         implementListButtonListeners([dataWithId]);
         Object.values($(".form-element>input[type=text]")).forEach(el => $(el).val(""))
+    })
+
+}
+
+const postEditedProduct = (event) => {
+    var requestData = {
+        pId: event.data.param,
+        pName: $("input#product-name").val(),
+        PRODUCTCODE: $("input#product-code").val(),
+        PRICE: $("input#product-price").val(),
+        CATEGORY: $("input#product-category").val(),
+        DATEOFWITHDRAWAL: $("input#product-withdrawal").val()
+    }
+
+
+    ajaxCall("POST","../php/edit_product.php", requestData, "Product wasn't added")
+    .then((response)=> {
+        Object.values($(".form-element>input[type=text]")).forEach(el => $(el).val(""))
+        $("#add-product-form").hide()
+        // TODO edit hot reload
     })
 
 }
