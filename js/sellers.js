@@ -32,8 +32,10 @@ const deleteProduct = (event) => {
     var pId = $(event.target).attr('id')
     //connect to db
     ajaxCall("POST", "../php/delete_product.php", {pId: pId }, "Product wasn't deleted").
-    then(console.log("product deleted"))
-    // πρεπει να εξαφανίζονται από τη λίστα τα προιοντα που διαγράφονται
+    then(()=>{
+        $("#products").DataTable().row($(event.target).parents('tr')).remove().draw()
+    })
+    .catch(err => console.log(err))
 }
 
 
@@ -44,17 +46,26 @@ const toggleAddProductSection = () => {
 
 const postProductToDB = () => {
     var requestData = {
-        name: $("input#product-name").val(),
-        code: $("input#product-code").val(),
-        price: $("input#product-price").val(),
-        category: $("input#product-category").val(),
-        withdrawaldate: $("input#product-withdrawal").val()
+        pName: $("input#product-name").val(),
+        PRODUCTCODE: $("input#product-code").val(),
+        PRICE: $("input#product-price").val(),
+        CATEGORY: $("input#product-category").val(),
+        DATEOFWITHDRAWAL: $("input#product-withdrawal").val()
     }
 
+
     ajaxCall("POST","../php/add_product.php", requestData, "Product wasn't added")
-    .then(res=>console.log(res))
+    .then((response)=> {
+        var dataWithId = {
+            ...requestData,
+            pId: parseInt(response)
+        }
+        var table = $("#products").DataTable();
+        table.rows.add([dataWithId]).draw();
+    })
 
 }
+
 
 
 const ajaxCall = (requestType, requestURL, requestData, errorMessage) => {
@@ -71,6 +82,7 @@ const ajaxCall = (requestType, requestURL, requestData, errorMessage) => {
 
 const buildProductsTable = (fetcheddata) => {
     data = JSON.parse(fetcheddata)
+    if(!data){ data = {} }
     var table = $("#products").DataTable({
         data: data,
         columns: [
@@ -92,6 +104,6 @@ const buildProductsTable = (fetcheddata) => {
         ]
     })
 
-    implementListButtonListeners(data)
+    // implementListButtonListeners(data)
     return data
 }
