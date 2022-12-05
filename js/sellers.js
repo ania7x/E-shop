@@ -64,6 +64,7 @@ const postProductToDB = () => {
         var table = $("#products").DataTable();
         table.rows.add([dataWithId]).draw();
         implementListButtonListeners([dataWithId]);
+        Object.values($(".form-element>input[type=text]")).forEach(el => $(el).val(""))
     })
 
 }
