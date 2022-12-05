@@ -32,8 +32,10 @@ const deleteProduct = (event) => {
     var pId = $(event.target).attr('id')
     //connect to db
     ajaxCall("POST", "../php/delete_product.php", {pId: pId }, "Product wasn't deleted").
-    then(console.log("product deleted"))
-    // πρεπει να εξαφανίζονται από τη λίστα τα προιοντα που διαγράφονται
+    then(()=>{
+        $("#products").DataTable().row($(event.target).parents('tr')).remove().draw()
+    })
+    .catch(err => console.log(err))
 }
 
 
