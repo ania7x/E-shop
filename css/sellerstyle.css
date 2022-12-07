@@ -1,3 +1,8 @@
+#main{
+    width: 80%;
+    margin:auto;
+}
+
 .add-new-product{
     display: flex;
     flex-direction: row;
