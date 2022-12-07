@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         where products.id=cart.productid;";
 
     $res = mysqli_query($mysqli, $query);
+    $products = [];
     while ($row = mysqli_fetch_array($res)) {
         $products[] = $row;
     }
