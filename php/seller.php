@@ -2,7 +2,7 @@
 session_start();
 include("dbconnect.php");
 
-$query = "SELECT p.ID as pId, p.NAME AS pName, PRODUCTCODE, PRICE, CATEGORY, DATEOFWITHDRAWAL
+$query = "SELECT p.ID as pId, p.NAME AS pName, PRODUCTCODE, PRICE, CATEGORY, DATE(DATEOFWITHDRAWAL) AS DATEOFWITHDRAWAL
             FROM cloud.products p 
             WHERE p.SELLERID = ".$_SESSION['id'].";";
 
