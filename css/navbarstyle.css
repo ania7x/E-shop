@@ -50,6 +50,7 @@ ul.navbar li.masterItem a {
     padding: 8px 25px;
     color: #333;
     text-decoration: none;
+    transition: 0.3s;
 }
 
 ul.navbar li.masterItem a:hover {
@@ -83,6 +84,7 @@ ul.navbar li.masterItem:hover ul.dropdown {
     border-radius: 3px;
     padding: 0.5em 2em;
     height: 1.2em;
+    transition: 0.3s;
 }
 
 /* Option 2 - According to my taste :P */
@@ -99,3 +101,8 @@ ul.navbar li.masterItem:hover ul.dropdown {
       linear-gradient(to right, #caf6c8, #f2f2c8);
 } */
 
+
+.logout-btn:hover{
+  color:#136a8a;
+  background-color: white;
+}
