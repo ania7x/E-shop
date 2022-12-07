@@ -1,3 +1,8 @@
+#main{
+    width: 80%;
+    margin:auto;
+}
+
 .add-new-product{
     display: flex;
     flex-direction: row;
@@ -30,4 +35,27 @@
 }
 .form-element input[type="button"]{
     height: 100%;
+}
+
+button.edit, button.delete{
+    list-style: none;
+    border: none;
+    padding: 3px 10px;
+    border-radius: 5px;
+    color: #136a8a;
+    background: #cdfeba;
+    box-shadow: 0px 0px 10px #c8c8f6;
+    background: 
+      -webkit-linear-gradient(to left, #cdfeba, #ccf1ff);
+    background: 
+      linear-gradient(to left, #cdfeba, #ccf1ff);
+}
+
+button.edit, button.delete{
+    color: #ccf1ff;
+    background: #136a8a;
+    background: 
+      -webkit-linear-gradient(to right, #267871, #136a8a);
+    background: 
+      linear-gradient(to right, #267871, #136a8a);
 }

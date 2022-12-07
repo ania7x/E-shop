@@ -17,14 +17,12 @@ endif;
 </head>
 
 <body>
-  <div class='head'>
-    <?php include("navbar.php"); ?>
-  </div>
+  <?php include("navbar.php"); ?>
   <div class='maincontent'>
-  <h4 class='company'>Welcome
-      <?php echo $_SESSION['username'] ." ".$_SESSION['surname']." (".$_SESSION['role']." )" ;?>
-  </h4>
-</div>
+    <h4 class='company'>Welcome
+      <?php echo $_SESSION['username'] . " " . $_SESSION['surname'] . " (" . $_SESSION['role'] . " )"; ?>
+    </h4>
+  </div>
 </body>
 
 </html>

@@ -1,5 +1,6 @@
-body {
-	background: #ABCDEF;
+.page{
+  width: 80%;
+  margin:auto;
 }
 .cart {
     text-align: center;

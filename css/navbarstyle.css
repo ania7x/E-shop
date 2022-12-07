@@ -1,7 +1,40 @@
-ul.navbar {
+*{
+    margin: 0;
     padding: 0;
+}
+
+body {
+    background: #ABCDEF;
+    font-family: Assistant, sans-serif;
+}
+
+.header{
+    margin: 10px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    padding: 30px 50px;
+    box-shadow: 0px 0px 10px #26882378;
+    display: flex;
+    justify-content: space-between;
+    width:auto;
+    height: 3em;
+    color: white;
+    background: #136a8a;
+    background: 
+      -webkit-linear-gradient(to right, #267871, #136a8a);
+    background: 
+      linear-gradient(to right, #267871, #136a8a);
+}
+
+ul.navbar>li{
     list-style: none;
-    background: #f2f2f2;
+    color: white;
+    background: #cdfeba;
+    box-shadow: 0px 0px 10px #c8c8f6;
+    background: 
+      -webkit-linear-gradient(to right, #cdfeba, #ccf1ff);
+    background: 
+      linear-gradient(to right, #cdfeba, #ccf1ff);
     width: 500px;
 }
 
@@ -17,6 +50,7 @@ ul.navbar li.masterItem a {
     padding: 8px 25px;
     color: #333;
     text-decoration: none;
+    transition: 0.3s;
 }
 
 ul.navbar li.masterItem a:hover {
@@ -41,3 +75,34 @@ ul.navbar li.masterItem:hover ul.dropdown {
     /* Display the dropdown */
 }
 
+/* Option 1 - According with the theme*/
+.logout-btn{
+    background: none;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0px 0px 0px 2px white;
+    border-radius: 3px;
+    padding: 0.5em 2em;
+    height: 1.2em;
+    transition: 0.3s;
+}
+
+/* Option 2 - According to my taste :P */
+/* .logout-btn{
+    text-decoration: none;
+    color:black;
+    box-shadow: 0px 0px 10px #c8c8f6;
+    padding: 10px 15px;
+    height: 1.2em;
+    background: #cdfeba;
+    background: 
+      -webkit-linear-gradient(to right, #cdfeba, #ccf1ff);
+    background: 
+      linear-gradient(to right, #caf6c8, #f2f2c8);
+} */
+
+
+.logout-btn:hover{
+  color:#136a8a;
+  background-color: white;
+}

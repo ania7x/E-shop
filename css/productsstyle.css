@@ -1,9 +1,9 @@
-.users {
+#main{
     width: 80%;
-    margin: auto;
+    margin:auto;
 }
 
-button.confirm, button.delete{
+button.purchase{
     list-style: none;
     border: none;
     padding: 3px 10px;
@@ -18,7 +18,7 @@ button.confirm, button.delete{
     transition: 0.3s;
 }
 
-button.confirm:hover, button.delete:hover{
+button.purchase:hover{
     color: #ccf1ff;
     background: #136a8a;
     background: 
