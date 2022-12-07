@@ -5,7 +5,7 @@ include("dbconnect.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
-    $query = "SELECT p.ID as pId, p.NAME AS pName, PRICE, CATEGORY, DATEOFWITHDRAWAL, u.NAME as sellerName
+    $query = "SELECT p.ID as pId, p.NAME AS pName, PRICE, CATEGORY, DATE(DATEOFWITHDRAWAL) AS DATEOFWITHDRAWAL, u.NAME as sellerName
             FROM cloud.products p 
             INNER JOIN 
             cloud.users u 

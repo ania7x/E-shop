@@ -3,7 +3,7 @@ session_start();
 include("dbconnect.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    $query = "select name,price,productid,dateofinsertion from products,(
+    $query = "select name,price,productid,DATE(dateofinsertion) as dateofinsertion from products,(
         select productid,dateofinsertion from carts where USERID =" . $_SESSION['id'] . ") as cart
         where products.id=cart.productid;";
 
