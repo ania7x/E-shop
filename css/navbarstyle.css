@@ -29,6 +29,7 @@ ul.navbar>li{
     list-style: none;
     color: white;
     background: #cdfeba;
+    box-shadow: 0px 0px 10px #c8c8f6;
     background: 
       -webkit-linear-gradient(to right, #cdfeba, #ccf1ff);
     background: 
@@ -74,7 +75,6 @@ ul.navbar li.masterItem:hover ul.dropdown {
 
 .logout-btn{
     text-decoration: none;
-    background: white;
     color:black;
     box-shadow: 0px 0px 10px #c8c8f6;
     padding: 10px 15px;
