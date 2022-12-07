@@ -4,6 +4,13 @@ $(document).ready(()=>{
     .catch((msg) => alert(msg))
 })
 
+const addToCart = (event) => {
+    productId = $(event.target).attr('id');
+    ajaxCall("POST", "../php/product.php", {pId: productId}, `Couldn't add product ${productId} to cart`)
+    .then((res)=>alert(res))
+    .catch((msg) => alert(msg))
+}
+
 const ajaxCall = (requestType, requestURL, requestData, errorMessage) => {
     return new Promise((respond, reject) => {
         $.ajax({
@@ -33,6 +40,8 @@ const buildProductsTable = (fetcheddata) => {
             }
         ]
     })
+
+    $('.purchase').click(addToCart)
 
     
 }
