@@ -1,7 +1,38 @@
-ul.navbar {
+*{
+    margin: 0;
     padding: 0;
+}
+
+body {
+    background: #ABCDEF;
+    font-family: Assistant, sans-serif;
+}
+
+.header{
+    margin: 10px;
+    border-radius: 5px;
+    padding: 30px 50px;
+    box-shadow: 0px 0px 10px #26882378;
+    display: flex;
+    justify-content: space-between;
+    width:auto;
+    height: 3em;
+    color: white;
+    background: #136a8a;
+    background: 
+      -webkit-linear-gradient(to right, #267871, #136a8a);
+    background: 
+      linear-gradient(to right, #267871, #136a8a);
+}
+
+ul.navbar>li{
     list-style: none;
-    background: #f2f2f2;
+    color: white;
+    background: #cdfeba;
+    background: 
+      -webkit-linear-gradient(to right, #cdfeba, #ccf1ff);
+    background: 
+      linear-gradient(to right, #cdfeba, #ccf1ff);
     width: 500px;
 }
 
@@ -39,5 +70,19 @@ ul.navbar li.masterItem ul.dropdown {
 ul.navbar li.masterItem:hover ul.dropdown {
     display: block;
     /* Display the dropdown */
+}
+
+.logout-btn{
+    text-decoration: none;
+    background: white;
+    color:black;
+    box-shadow: 0px 0px 10px #c8c8f6;
+    padding: 10px 15px;
+    height: 1.2em;
+    background: #cdfeba;
+    background: 
+      -webkit-linear-gradient(to right, #cdfeba, #ccf1ff);
+    background: 
+      linear-gradient(to right, #caf6c8, #f2f2c8);
 }
 
