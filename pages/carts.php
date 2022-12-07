@@ -1,10 +1,10 @@
 <?php
-  session_start();
-  if(!isset($_SESSION['id'])){
-    header('Location:../index.html');
-  }
+session_start();
+if (!isset($_SESSION['id'])) {
+  header('Location:../index.html');
+}
 
-if(strcmp($_SESSION['role'],"USER")){
+if (strcmp($_SESSION['role'], "USER")) {
   header('Location:./notallowed.html');
 }
 
@@ -34,11 +34,13 @@ if(strcmp($_SESSION['role'],"USER")){
   </div>
   <div class="page">
     <div class="cart">
-        <div class="cart-list">
-        <div class="title">
-          Shopping Bag
-         </div>
-        </div><div class="cart-sum"></div>
+      <div class="title">
+        Shopping Bag
+      </div>
+      <div class="cart-list">
+        <p class="message"></p>
+      </div>
+      <div class="cart-sum"></div>
     </div>
   </div>
 </body>

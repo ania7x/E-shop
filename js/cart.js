@@ -1,9 +1,13 @@
 $(document).ready(()=>{
     ajaxCall("GET","../php/cart.php",{},"Cart not found")
     .then(CartList)
-    .catch((msg) => alert(msg))
+    .catch(emptyCartInfo)
    
 })
+
+const emptyCartInfo =() => {
+    $('.message').html("No products added to your cart yet. Visit products page!")
+}
 
 const ajaxCall = (requestType, requestURL, requestData, errorMessage) => {
     return new Promise((respond, reject) => {

@@ -2,6 +2,11 @@
   width: 80%;
   margin:auto;
 }
+
+.message{
+  color: #136a8a;
+  margin-top: 80px;
+}
 .cart {
     text-align: center;
     width: 100%;
