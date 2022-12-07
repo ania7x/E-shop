@@ -74,7 +74,19 @@ ul.navbar li.masterItem:hover ul.dropdown {
     /* Display the dropdown */
 }
 
+/* Option 1 - According with the theme*/
 .logout-btn{
+    background: none;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0px 0px 0px 2px white;
+    border-radius: 3px;
+    padding: 0.5em 2em;
+    height: 1.2em;
+}
+
+/* Option 2 - According to my taste :P */
+/* .logout-btn{
     text-decoration: none;
     color:black;
     box-shadow: 0px 0px 10px #c8c8f6;
@@ -85,5 +97,5 @@ ul.navbar li.masterItem:hover ul.dropdown {
       -webkit-linear-gradient(to right, #cdfeba, #ccf1ff);
     background: 
       linear-gradient(to right, #caf6c8, #f2f2c8);
-}
+} */
 
