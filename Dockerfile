@@ -1,2 +1,7 @@
 FROM php:7.2-apache
 COPY . /var/www/html/
+
+ENV KEYROCK_HOST=localhost
+ENV KEYROCK_PORT=3005
+ENV BACKEND_HOST=backend
+ENV BACKEND_PORT=3005
